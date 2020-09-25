@@ -3,12 +3,14 @@ package com.zzxx.service.impl;
 import com.zzxx.dao.AccountDao;
 import com.zzxx.dao.impl.AccountDaoImpl;
 import com.zzxx.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 //@Component("accountService")
 @Service
 public class AccountServiceImpl implements AccountService {
+    @Autowired
     private AccountDao ac;
 
     public AccountDao getAc() {
@@ -29,7 +31,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void update() {
         ac.updateAccount();
-        System.out.println("service update");
+
     }
 
 
